@@ -1,3 +1,4 @@
+import 'package:finethings/base/res/styles/app_styles.dart';
 import 'package:finethings/base/select_color.dart';
 import 'package:finethings/base/widget/add_to_cart_btn.dart';
 import 'package:finethings/base/widget/product_description.dart';
@@ -41,16 +42,13 @@ class CartScreen extends StatelessWidget {
                           children: [
                             Icon(
                               Icons.arrow_back_ios_new_sharp,
-                              color: Colors.black,
+                              color: AppStyles.mainColor,
                               size: 15,
                             ),
                             SizedBox(width: 5),
                             Text(
                               'finethingsNG',
-                              style: TextStyle(
-                                fontSize: 16,
-                                fontWeight: FontWeight.w400,
-                              ),
+                              style: AppStyles.textStyle1
                             ),
                           ],
                         ),

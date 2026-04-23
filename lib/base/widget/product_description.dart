@@ -1,3 +1,4 @@
+import 'package:finethings/base/res/styles/app_styles.dart';
 import 'package:finethings/controller/product_description_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -21,7 +22,7 @@ class ProductDescription extends StatelessWidget {
               "Elevate your daily outfits with a perfect blend of professional structure and feminine flair. The Danbaoly Satchel is designed for the modern woman who values organization without compromising on style. Whether you’re heading to a business meeting or a brunch date, this bag transitions seamlessly with you.",
               maxLines: controller.isExpanded.value ? null : 2,
               overflow: controller.isExpanded.value ? TextOverflow.visible : TextOverflow.ellipsis,
-              style: TextStyle(fontSize: 14, fontWeight: FontWeight.w400),
+              style: AppStyles.descriptionTextStyle,
               textAlign: TextAlign.justify,
             ),
           ),
@@ -33,12 +34,12 @@ class ProductDescription extends StatelessWidget {
                 padding: EdgeInsets.only(right: 5),
                 decoration: BoxDecoration(
                   border: Border(
-                    bottom: BorderSide(color: Colors.blueGrey, width: 2.0),
+                    bottom: BorderSide(color: AppStyles.tertiaryColor, width: 2.0),
                   ),
                 ),
                 child: Text(
                   controller.isExpanded.value ? 'Less' : 'More',
-                  style: TextStyle(color: Colors.blueGrey, fontSize: 12),
+                  style: AppStyles.moreTextStyle,
                 ),
               ),
             ),

@@ -1,3 +1,4 @@
+import 'package:finethings/base/res/styles/app_styles.dart';
 import 'package:flutter/material.dart';
 
 class OtherFeatures extends StatelessWidget {
@@ -13,7 +14,7 @@ class OtherFeatures extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Text(boldText, style: TextStyle(fontSize: 13, fontWeight: FontWeight(600)),),
-          Text(lightText, style: TextStyle(fontSize: 12,),)
+          Text(lightText, style: TextStyle(fontSize: 12, color: AppStyles.tertiaryColor),)
         ],
       ),
     );

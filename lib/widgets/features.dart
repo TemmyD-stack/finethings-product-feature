@@ -1,3 +1,4 @@
+import 'package:finethings/base/res/styles/app_styles.dart';
 import 'package:finethings/base/widget/other_features.dart';
 import 'package:flutter/material.dart';
 
@@ -10,7 +11,7 @@ class Features extends StatelessWidget {
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text("Features:",  style: TextStyle(fontSize: 15, fontWeight: FontWeight.w600),),
+                        Text("Features:",  style:AppStyles.descriptionTextStyle.copyWith(fontWeight: FontWeight(600)),),
                         SizedBox(height: 15,),
                         OtherFeatures(
                           lightText:

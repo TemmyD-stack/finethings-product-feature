@@ -1,3 +1,4 @@
+import 'package:finethings/base/res/styles/app_styles.dart';
 import 'package:flutter/material.dart';
 import 'package:iconsax_flutter/iconsax_flutter.dart';
 
@@ -15,7 +16,7 @@ class ProductHeader extends StatelessWidget {
             children: [
               Text(
                 'Luxury Danbaoly Designer Satchel',
-                style: TextStyle(fontSize: 18, fontWeight: FontWeight.w700),
+                style: AppStyles.headLineStyle1,
                 textAlign: TextAlign.left,
               ),
 
@@ -37,30 +38,25 @@ class ProductHeader extends StatelessWidget {
                 children: [
                   Text(
                     '\$56',
-                    style: TextStyle(fontSize: 20, fontWeight: FontWeight(800)),
+                    style: AppStyles.priceStyle,
                   ),
                   Text(
                     '\$70',
-                    style: TextStyle(
-                      decoration: TextDecoration.lineThrough,
-                      fontSize: 10,
-                      fontWeight: FontWeight(400),
-                      color: Colors.blueGrey,
-                    ),
+                    style: AppStyles.discountPriceStyle
                   ),
                 ],
               ),
               SizedBox(width: 10,),
               Row(
                 children: [
-                  Icon(Iconsax.star_copy, size: 15, color: Colors.amberAccent,),
+                  Icon(Iconsax.star_copy, size: 15, color: AppStyles.starColor,),
                   Text(
                     '4.5',
                     style: TextStyle(fontSize: 12, fontWeight: FontWeight(600)),
                   ),
                    Text(
                     '/5',
-                    style: TextStyle(fontSize: 10,  color: Colors.grey,),
+                    style: TextStyle(fontSize: 10,  color: AppStyles.secondaryColor,),
                   ),
                 ],
               ),
@@ -74,7 +70,7 @@ class ProductHeader extends StatelessWidget {
                     )
                   )
                 ),
-                child: Text('Exclusive Collection',  style: TextStyle(fontSize: 10,  color: Colors.blueGrey,),),
+                child: Text('Exclusive Collection',  style: AppStyles.discountPriceStyle.copyWith(decoration: TextDecoration.none),),
               )
             ],
           ),

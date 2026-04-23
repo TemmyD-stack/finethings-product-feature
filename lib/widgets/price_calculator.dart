@@ -1,3 +1,4 @@
+import 'package:finethings/base/res/styles/app_styles.dart';
 import 'package:finethings/controller/price_calculator_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -16,7 +17,7 @@ class PriceCalculator extends StatelessWidget {
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text("Quantity:",  style: TextStyle(fontSize: 15, fontWeight: FontWeight.w600),),
+            Text("Quantity:",  style: AppStyles.descriptionTextStyle.copyWith(fontWeight: FontWeight(600)),),
             SizedBox(height: 10),
 
             Row(
@@ -27,15 +28,15 @@ class PriceCalculator extends StatelessWidget {
                     padding: EdgeInsets.symmetric(horizontal: 12, vertical: 5),
                     decoration: BoxDecoration(
                       color: Colors.transparent,
-                      border: Border.all(color: Colors.black, width: 1),
+                      border: Border.all(color: AppStyles.mainColor, width: 1),
                        borderRadius: BorderRadius.circular(5),
                     ),
-                    child: Text('-'),
+                    child: Text('-', style: AppStyles.textStyle1.copyWith(fontWeight: FontWeight(600)),),
                   ),
                 ),
                 Padding(
                   padding: EdgeInsets.all(5),
-                  child: Text('${controller.count}')
+                  child: Text('${controller.count}', style: AppStyles.priceStyle.copyWith(fontWeight: FontWeight(600)),)
                   ),
                 GestureDetector(
                   onTap: ()=> controller.increment(),
@@ -43,10 +44,10 @@ class PriceCalculator extends StatelessWidget {
                     padding: EdgeInsets.symmetric(horizontal: 10, vertical: 5),
                     decoration: BoxDecoration(
                       color: Colors.transparent,
-                      border: Border.all(color: Colors.black, width: 1),
+                      border: Border.all(color: AppStyles.mainColor, width: 1),
                        borderRadius: BorderRadius.circular(5),
                     ),
-                    child: Text('+'),
+                    child: Text('+', style: AppStyles.textStyle1.copyWith(fontWeight: FontWeight(600)),),
                   ),
                 ),
               ],
@@ -56,17 +57,17 @@ class PriceCalculator extends StatelessWidget {
         Column(
            crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text("Cost:",  style: TextStyle(fontSize: 15, fontWeight: FontWeight.w600),),
+            Text("Cost:",  style: AppStyles.descriptionTextStyle.copyWith(fontWeight: FontWeight(600)),),
             SizedBox(height: 10,),
             Container(
               decoration: BoxDecoration(
                 color: Colors.grey[100],
-                border: Border.all(color: Colors.black, width: 1),
+                border: Border.all(color: AppStyles.mainColor, width: 1),
                 borderRadius: BorderRadius.circular(10),
               ),
               child: Padding(
                padding: EdgeInsets.symmetric(horizontal: 10, vertical: 5),
-                child: Text('\$${controller.cost}'),
+                child: Text('\$${controller.cost}', style: AppStyles.descriptionTextStyle.copyWith(fontWeight: FontWeight(600)),),
               ),
             ),
           ],

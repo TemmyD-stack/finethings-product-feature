@@ -1,3 +1,5 @@
+import 'package:finethings/base/res/app_media.dart';
+import 'package:finethings/base/res/styles/app_styles.dart';
 import 'package:finethings/controller/select_color_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -6,10 +8,10 @@ class SelectColor extends StatelessWidget {
    SelectColor({super.key});
 
   final List<Map<String, dynamic>> colorImageData = [
-    {'color': const Color.fromARGB(255, 149, 49, 42), 'image': 'assets/images/red_bag.png'},
-    {'color': Colors.black, 'image': 'assets/images/black_bag.png'},
-    {'color': const Color.fromARGB(255, 39, 12, 2), 'image': 'assets/images/brown_bag.png'},
-    {'color': const Color.fromARGB(255, 234, 113, 153), 'image': 'assets/images/pink_bag.png'},
+    {'color': AppStyles.redColor, 'image': AppMedia.redBag},
+    {'color': AppStyles.blackColor, 'image': AppMedia.blackBag},
+    {'color': AppStyles.brownColor, 'image': AppMedia.brownBag},
+    {'color': AppStyles.pinkColor, 'image': AppMedia.pinkBag},
   ];
   
   final SelectColorController controller = Get.put(
@@ -36,7 +38,7 @@ class SelectColor extends StatelessWidget {
                     color: data['color'],
                      border: Border.all(
                       color: controller.selectedImage.value == data['image'] 
-                          ? Colors.blueGrey 
+                          ? AppStyles.tertiaryColor 
                           : Colors.transparent,
                       width: 2,
                     ),
