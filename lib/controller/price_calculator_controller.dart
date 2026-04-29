@@ -1,8 +1,12 @@
 import 'package:get/get.dart';
 
 class PriceCalculatorController extends GetxController {
+  final Map<String, dynamic> bag;
+   
+  PriceCalculatorController({required this.bag});
    var count = 0.obs;
-   final double priceEach = 56;
+
+   double get priceEach => (bag['price'] ?? 0.0).toDouble();
    double get cost => count.value * priceEach;
   void increment() {
     count.value++;

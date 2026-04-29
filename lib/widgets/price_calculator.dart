@@ -4,11 +4,14 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class PriceCalculator extends StatelessWidget {
- PriceCalculator({super.key});
+  final Map<String, dynamic> bag;
+  final PriceCalculatorController controller;
 
-  final PriceCalculatorController controller = Get.put(
-    PriceCalculatorController(),
-  );
+  PriceCalculator({super.key, required this.bag})
+      : controller = Get.put(
+          PriceCalculatorController(bag: bag), 
+          
+        );
   @override
   Widget build(BuildContext context) {
     return Obx(()=> Row(

@@ -4,7 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class ProductDescription extends StatelessWidget {
-  ProductDescription({super.key});
+   final Map<String, dynamic> bag;
+  ProductDescription({super.key, required this.bag});
 
   final ProductDescriptionController controller = Get.put(
     ProductDescriptionController(),
@@ -19,7 +20,7 @@ class ProductDescription extends StatelessWidget {
           Padding(
             padding: EdgeInsets.all(10),
             child: Text(
-              "Elevate your daily outfits with a perfect blend of professional structure and feminine flair. The Danbaoly Satchel is designed for the modern woman who values organization without compromising on style. Whether you’re heading to a business meeting or a brunch date, this bag transitions seamlessly with you.",
+              bag['description'],
               maxLines: controller.isExpanded.value ? null : 2,
               overflow: controller.isExpanded.value ? TextOverflow.visible : TextOverflow.ellipsis,
               style: AppStyles.descriptionTextStyle,

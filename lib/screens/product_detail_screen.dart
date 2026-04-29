@@ -1,4 +1,3 @@
-import 'package:finethings/base/res/styles/app_styles.dart';
 import 'package:finethings/base/select_color.dart';
 import 'package:finethings/base/widget/add_to_cart_btn.dart';
 import 'package:finethings/base/widget/product_description.dart';
@@ -9,18 +8,22 @@ import 'package:finethings/widgets/price_calculator.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class CartScreen extends StatelessWidget {
-  CartScreen({super.key});
+class ProductDetailScreen extends StatelessWidget {
+  final dynamic bag;
 
-  final SelectColorController controller = Get.put(SelectColorController());
+   ProductDetailScreen({super.key, required this.bag});
+   late final controller = Get.put(SelectColorController(), tag: bag['id'].toString());
+
   @override
   Widget build(BuildContext context) {
-    return Obx(
-      () => Scaffold(
+     if (controller.selectedImage.isEmpty) {
+      controller.initImage(bag['image']);
+    }
+    return Scaffold(
         body: CustomScrollView(
           slivers: [
             SliverAppBar(
-              expandedHeight: 350.0,
+              expandedHeight: 320.0,
               floating: false,
               pinned: true,
               flexibleSpace: FlexibleSpaceBar(
@@ -30,30 +33,24 @@ class CartScreen extends StatelessWidget {
                     children: [
                      
                       Positioned.fill(
-                        child: Image.asset(
-                          controller.selectedImage.value,
-                          fit: BoxFit.contain,
-                        ),
-                      ),
-                      Positioned(
-                        top: 20,
-                        left: 20,
-                        child: Row(
-                          children: [
-                            Icon(
-                              Icons.arrow_back_ios_new_sharp,
-                              color: AppStyles.mainColor,
-                              size: 15,
+                        child:Obx(() {
+                          controller.selectedImage.value.isEmpty 
+                          ? bag['image'] 
+                          : controller.selectedImage.value;
+
+                      return Container(
+
+                        decoration: BoxDecoration(
+                            image: DecorationImage(
+                              fit: BoxFit.contain,
+                              image: Image.asset(
+                            'assets/images/${controller.selectedImage.value}').image,
                             ),
-                            SizedBox(width: 5),
-                            Text(
-                              'finethingsNG',
-                              style: AppStyles.textStyle1
-                            ),
-                          ],
-                        ),
+                          ),
+                      );
+                        }  )
                       ),
-                       SelectColor(),
+                       SelectColor(bag: bag, tag: bag['id'].toString()),
                     ],
                   ),
                 ),
@@ -66,12 +63,12 @@ class CartScreen extends StatelessWidget {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      ProductHeader(),
-                      ProductDescription(),
+                      ProductHeader(bag: bag,),
+                      ProductDescription(bag: bag,),
                       SizedBox(height: 30),
-                      Features(),
+                      Features(bag: bag,),
                       SizedBox(height: 30),
-                      PriceCalculator(),
+                      PriceCalculator(bag: bag,),
                       SizedBox(height: 30),
                       AddToCartBtn(),
                     ],
@@ -81,7 +78,6 @@ class CartScreen extends StatelessWidget {
             ),
           ],
         ),
-      ),
-    );
+      );
   }
 }

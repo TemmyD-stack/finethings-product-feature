@@ -1,24 +1,20 @@
-import 'package:finethings/base/res/app_media.dart';
 import 'package:finethings/base/res/styles/app_styles.dart';
 import 'package:finethings/controller/select_color_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class SelectColor extends StatelessWidget {
-   SelectColor({super.key});
+  final Map<String, dynamic> bag;
+   SelectColor({super.key, required this.bag, required String tag});
 
-  final List<Map<String, dynamic>> colorImageData = [
-    {'color': AppStyles.redColor, 'image': AppMedia.redBag},
-    {'color': AppStyles.blackColor, 'image': AppMedia.blackBag},
-    {'color': AppStyles.brownColor, 'image': AppMedia.brownBag},
-    {'color': AppStyles.pinkColor, 'image': AppMedia.pinkBag},
-  ];
+  late final List<Map<String, dynamic>> colorImageData = bag['color_image'];
   
-  final SelectColorController controller = Get.put(
-    SelectColorController(),
-  );
+  late final SelectColorController controller = Get.put(SelectColorController(), tag: bag['id'].toString());
+
+  
   @override
   Widget build(BuildContext context) {
+   
     return Positioned(
       top: 70,
       right: 30,
@@ -30,10 +26,10 @@ class SelectColor extends StatelessWidget {
             return Padding(
               padding: const EdgeInsets.all(5),
               child: GestureDetector(
-                onTap: () => controller.updateImage(data['image']),
+                onTap: () => controller.updateBagImage(data['image']),
                 child: Obx(()=> Container(
-                  width: 15,
-                  height: 15,
+                  width: 20,
+                  height: 20,
                   decoration: BoxDecoration(
                     color: data['color'],
                      border: Border.all(

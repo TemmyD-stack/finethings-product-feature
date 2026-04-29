@@ -1,7 +1,15 @@
 import 'package:get/get.dart';
 
 class SelectColorController extends GetxController {
-  var selectedImage = 'assets/images/red_bag.png'.obs;
+ 
+  var selectedImage = ''.obs;
 
-  void updateImage(String path) => selectedImage.value = path;
+ 
+  void initImage(String imagePath) {
+    selectedImage.value = imagePath;
+  }
+
+  void updateBagImage(String path) {
+    selectedImage.value = path;
+  }
 }

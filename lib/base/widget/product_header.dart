@@ -3,7 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:iconsax_flutter/iconsax_flutter.dart';
 
 class ProductHeader extends StatelessWidget {
-  const ProductHeader({super.key});
+    final Map<String, dynamic> bag;
+  const ProductHeader({super.key, required this.bag});
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +16,7 @@ class ProductHeader extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text(
-                'Luxury Danbaoly Designer Satchel',
+                bag['name'],
                 style: AppStyles.headLineStyle1,
                 textAlign: TextAlign.left,
               ),
@@ -37,11 +38,11 @@ class ProductHeader extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.end,
                 children: [
                   Text(
-                    '\$56',
+                    '\$${bag['price']}',
                     style: AppStyles.priceStyle,
                   ),
                   Text(
-                    '\$70',
+                    '\$${bag['discount']}',
                     style: AppStyles.discountPriceStyle
                   ),
                 ],
@@ -51,7 +52,7 @@ class ProductHeader extends StatelessWidget {
                 children: [
                   Icon(Iconsax.star_copy, size: 15, color: AppStyles.starColor,),
                   Text(
-                    '4.5',
+                    '${bag['ratings']}',
                     style: TextStyle(fontSize: 12, fontWeight: FontWeight(600)),
                   ),
                    Text(
