@@ -13,8 +13,8 @@ class OtherFeatures extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Text(boldText, style: TextStyle(fontSize: 13, fontWeight: FontWeight(600)),),
-          Text(lightText, style: TextStyle(fontSize: 12, color: AppStyles.tertiaryColor),)
+          Text(boldText, style: TextStyle(fontSize: 14, fontWeight: FontWeight(600), color: AppStyles.textColor),),
+          Text(lightText, style: TextStyle(fontSize: 12,).copyWith(color: AppStyles.lightTextColor)),
         ],
       ),
     );

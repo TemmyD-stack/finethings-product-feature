@@ -35,7 +35,7 @@ class ProductDescription extends StatelessWidget {
                 padding: EdgeInsets.only(right: 5),
                 decoration: BoxDecoration(
                   border: Border(
-                    bottom: BorderSide(color: AppStyles.tertiaryColor, width: 2.0),
+                    bottom: BorderSide(color: AppStyles.mainColor, width: 2.0),
                   ),
                 ),
                 child: Text(

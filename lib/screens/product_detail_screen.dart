@@ -23,12 +23,12 @@ class ProductDetailScreen extends StatelessWidget {
         body: CustomScrollView(
           slivers: [
             SliverAppBar(
-              expandedHeight: 320.0,
+              expandedHeight: 250.0,
               floating: false,
               pinned: true,
               flexibleSpace: FlexibleSpaceBar(
                 background: Container(
-                  color: Colors.transparent,
+                  color: Colors.white54,
                   child: Stack(
                     children: [
                      
@@ -42,7 +42,7 @@ class ProductDetailScreen extends StatelessWidget {
 
                         decoration: BoxDecoration(
                             image: DecorationImage(
-                              fit: BoxFit.contain,
+                              fit: BoxFit.fitHeight,
                               image: Image.asset(
                             'assets/images/${controller.selectedImage.value}').image,
                             ),
@@ -60,19 +60,31 @@ class ProductDetailScreen extends StatelessWidget {
               delegate: SliverChildListDelegate([
                 Container(
                   padding: EdgeInsets.all(15),
+                  child: Container(
+                    padding: EdgeInsets.all(15),
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(18),
+                  ),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      ProductHeader(bag: bag,),
+                      ProductHeader(bag: bag, isHomePage: false,),
                       ProductDescription(bag: bag,),
                       SizedBox(height: 30),
                       Features(bag: bag,),
                       SizedBox(height: 30),
-                      PriceCalculator(bag: bag,),
-                      SizedBox(height: 30),
-                      AddToCartBtn(),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          PriceCalculator(bag: bag,),
+                          AddToCartBtn(),
+                        ],
+                      )
+                     
                     ],
                   ),
+                                      ),
                 ),
               ]),
             ),

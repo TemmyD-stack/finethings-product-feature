@@ -1,11 +1,16 @@
 import 'package:flutter/material.dart';
 
 class AppStyles {
-  static Color mainColor = Colors.black;
-  static Color secondaryColor = Colors.grey;
-  static Color primaryColor = Colors.white;
-  static Color tertiaryColor = Colors.blueGrey;
-  static Color bgColor = const Color.fromRGBO(238, 238, 238, 1);
+  static Color mainColor =  Color(0xFF3E2723);
+  static Color mainColor2 =  Color(0xFFFFFBEF);
+  static Color bgColor = Color(0xFFFAFAFA);
+  static Color textColor =  Color(0xFF212121);
+  static Color lightTextColor =  Color(0xFF757575);
+  static Color btnColor = Color(0xFFC69C6D);
+  static Color btnColor2 = Color(0xFF880E4F);
+
+  
+ 
   static Color starColor = Colors.amberAccent;
   static Color atlasBiegeColor = const Color.fromARGB(255, 225, 130, 96);
   static Color atlasBrownColor = const Color.fromARGB(255, 62, 39, 31);
@@ -23,38 +28,47 @@ class AppStyles {
   static TextStyle textStyle1 = TextStyle(
     fontSize: 16,
     fontWeight: FontWeight.w400,
+    color: textColor,
   );
   static TextStyle textStyle2 = TextStyle(
     fontSize: 10,
     fontWeight: FontWeight.w400,
+    color: textColor,
   );
   
-
-  static TextStyle headLineStyle1 = TextStyle(
-    fontSize: 18,
+   static TextStyle headLineStyle = TextStyle(
+    fontSize: 20,
     fontWeight: FontWeight.w700,
+    color: mainColor,
+  );
+  static TextStyle headLineStyle1 = TextStyle(
+    fontSize: 16,
+    fontWeight: FontWeight.w700,
+    color: textColor,
   );
   static TextStyle headLineStyle2 = TextStyle(
-    fontSize: 13,
+    fontSize: 14,
     fontWeight: FontWeight.w700,
+    color: textColor,
   );
   static TextStyle priceStyle = TextStyle(
-    fontSize: 20,
+    fontSize: 16,
     fontWeight: FontWeight(800),
+    color: textColor,
   );
   static TextStyle discountPriceStyle = TextStyle(
     decoration: TextDecoration.lineThrough,
-    fontSize: 10,
+    fontSize: 12,
     fontWeight: FontWeight(400),
-    color: tertiaryColor,
+    color: lightTextColor,
   );
   static TextStyle descriptionTextStyle = TextStyle(
     fontSize: 14,
     fontWeight: FontWeight(400),
-    color: mainColor,
+    color: textColor,
   );
   static TextStyle moreTextStyle = TextStyle(
-    color: tertiaryColor, 
-    fontSize: 12
+    color: lightTextColor, 
+    fontSize: 14
   );
 }

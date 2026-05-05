@@ -2,18 +2,22 @@ import 'package:finethings/base/res/styles/app_styles.dart';
 import 'package:flutter/material.dart';
 
 class AddToCartBtn extends StatelessWidget {
+ 
+
   const AddToCartBtn({super.key});
 
   @override
   Widget build(BuildContext context) {
+    //  final size = MediaQuery.of(context).size;
     return Container(
-      padding: EdgeInsets.symmetric(vertical: 10, horizontal: 18),
+      // width: size.width * 0.92,
+      padding: EdgeInsets.symmetric(vertical: 5, horizontal: 30),
       decoration: BoxDecoration(
-        color: Colors.transparent,
-        border: Border.all(color: AppStyles.mainColor, width: 1),
+        color: AppStyles.btnColor,
+        border: Border.all(color: AppStyles.btnColor, width: 1),
         borderRadius: BorderRadius.circular(10),
       ),
-      child: Center(child: Text("ADD TO CART", style:TextStyle(color: AppStyles.mainColor),)),
+      child: Center(child: Text("ADD TO CART", style:TextStyle(color: AppStyles.bgColor),)),
     );
   }
 }

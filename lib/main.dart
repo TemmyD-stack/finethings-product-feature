@@ -1,5 +1,5 @@
+import 'package:finethings/base/bottom_nav_bar.dart';
 import 'package:finethings/base/utils/app_routes.dart';
-import 'package:finethings/screens/all_products_screen.dart';
 import 'package:finethings/screens/product_detail_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       routes: {
-        AppRoutes.homepage: (context) => AllProductsScreen(),
+        AppRoutes.homepage: (context) => BottomNavBar(),
         AppRoutes.productDetails: (context) =>  ProductDetailScreen(bag: null,),
 
       },

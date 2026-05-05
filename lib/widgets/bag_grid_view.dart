@@ -1,4 +1,5 @@
-import 'package:finethings/base/res/styles/app_styles.dart';
+// import 'package:finethings/base/res/styles/app_styles.dart';
+// import 'package:finethings/base/res/styles/app_styles.dart';
 import 'package:finethings/base/widget/product_header.dart';
 import 'package:finethings/controller/bag_grid_view_controller.dart';
 import 'package:finethings/screens/product_detail_screen.dart';
@@ -9,12 +10,11 @@ class BagGridView extends StatelessWidget {
   final Map<String, dynamic> bag;
   final int index;
 
-   BagGridView({super.key, required this.bag, required this.index});
+  BagGridView({super.key, required this.bag, required this.index});
   final BagGridViewController controller = Get.put(BagGridViewController());
 
   @override
   Widget build(BuildContext context) {
-   
     return GestureDetector(
       onTap: () {
         // Standard Navigator
@@ -27,31 +27,36 @@ class BagGridView extends StatelessWidget {
       },
 
       child: Container(
-        padding: EdgeInsets.all(8),
-        margin: EdgeInsets.only(right: 8),
-        
+        padding: const EdgeInsets.all(8),
+        margin: const EdgeInsets.only(right: 8),
         decoration: BoxDecoration(
-          color: AppStyles.primaryColor,
+          color: Colors.white,
           borderRadius: BorderRadius.circular(18),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.brown,
+              spreadRadius: 2,
+              blurRadius: 5,
+              offset: const Offset(0, 3), // changes position of shadow
+            ),
+          ],
         ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            AspectRatio(
-              aspectRatio: 1.1,
+            Expanded(
               child: Container(
                 decoration: BoxDecoration(
-                  
                   borderRadius: BorderRadius.circular(12),
                   image: DecorationImage(
-                    fit: BoxFit.cover,
+                    fit: BoxFit.fitHeight,
                     image: AssetImage('assets/images/${bag['image']}'),
                   ),
                 ),
               ),
             ),
             SizedBox(height: 5),
-            ProductHeader(bag: bag)
+            ProductHeader(bag: bag, isHomePage: true,),
           ],
         ),
       ),
