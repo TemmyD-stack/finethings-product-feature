@@ -22,8 +22,8 @@ class HomeScreen extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Container(
-                  height: 70,
-                  width: 70,
+                  height: 50,
+                  width: 50,
                   decoration: BoxDecoration(
                     // border: Border.all(color: Colors.black, width: 2),
                     image: DecorationImage(
@@ -56,7 +56,7 @@ class HomeScreen extends StatelessWidget {
                 Row(
                   children: [
                     Icon(Icons.person_outline, color: AppStyles.btnColor, size: 28),
-                     SizedBox(width: 20),
+                     SizedBox(width: 10),
                     Icon(Icons.shopping_cart_outlined, color: AppStyles.btnColor, size: 25),
                   ],
                 ),

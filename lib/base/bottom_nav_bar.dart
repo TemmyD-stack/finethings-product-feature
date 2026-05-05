@@ -1,5 +1,6 @@
 import 'package:finethings/base/res/styles/app_styles.dart';
 import 'package:finethings/screens/Home/home_screen.dart';
+import 'package:finethings/screens/cart/cart_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:finethings/controller/bottom_nav_controller.dart';
 import 'package:get/get.dart';
@@ -14,7 +15,7 @@ class BottomNavBar extends StatelessWidget {
 
   final appScreens = [
     const HomeScreen(),
-    // const CartScreen(),
+    const CartScreen(),
    
   ];
 

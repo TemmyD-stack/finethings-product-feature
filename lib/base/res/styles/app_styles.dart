@@ -43,7 +43,7 @@ class AppStyles {
   );
   static TextStyle headLineStyle1 = TextStyle(
     fontSize: 16,
-    fontWeight: FontWeight.w700,
+    fontWeight: FontWeight.w600,
     color: textColor,
   );
   static TextStyle headLineStyle2 = TextStyle(
